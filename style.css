@@ -1,0 +1,315 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+*{
+    margin: 0;
+    outline: none;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Inter', sans-serif;
+    display:flow-root;
+    max-zoom: 80%;
+}
+html{
+    scroll-behavior: smooth;
+}
+.wrapper{
+    position: relative;
+    height: 100vh;
+}
+
+header{
+    width: 70%;
+    /* border: 1px solid red;    */
+    margin: auto auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+img{
+    height: 90px;
+
+}
+header ul{
+    list-style: none;
+    display: flex;
+    align-items:center;
+    /* border: 1px solid red; */
+    position: relative;
+}
+header ul li{
+    margin: 0 .4rem; 
+    color: black;
+}
+header ul li a{
+    text-decoration: none;
+    letter-spacing: 1px;
+    font-size: 20px;
+    padding: 15px 20px;
+    border-radius: 30px 5px 0 60px;
+    transition: all ease .3s;
+    color: black;
+}
+header ul li a:hover {
+    color: white;
+    background-color: black;
+}
+header ul li a.btn{
+    color: white;
+    background-color: black;
+    padding: 15px 40px;
+    white-space: nowrap;
+}
+header ul li a.btn:hover {
+    color:black;
+    background-color: gray;
+}
+header .fa-bars {
+    font-size: 2rem;
+    cursor: pointer;
+    color: #333;
+    display: none;
+}
+@media (max-width:850px) {
+    .slider.active{
+        border-radius: 20px;
+    }
+    header .fa-bars{
+        display: block;
+        z-index: 1;
+    }
+    nav{
+        position: fixed;
+        height: 80%;
+        width: 70%;
+        top: -100%;
+        left: 0;
+        box-shadow: 0 1rem 2rem #333;
+        font-weight: bold;
+        background-color: white;
+        z-index: 1;
+        transition: all ease-in .4s;
+    
+    }
+    nav ul{
+        width: 100%;
+        position: absolute;
+        padding-left: 0;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        margin: 4rem auto;
+    
+    }
+    nav ul li{
+        margin: 1.5rem auto;
+    }
+    nav ul li a{
+        font-size: 1rem;
+    }
+    .submenu{
+        position: absolute;
+        left: 0;
+        width: 150px;
+    }
+    
+    .nav-toggle {
+    top: 0;
+    }
+}
+
+/* Submenu Styling Starts */
+
+.submenu{
+    max-width: 200px;
+    position: absolute;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: -2px 2px 3px #333;
+    padding-left: 0;
+    margin-top: 15px;
+    opacity: 0;
+    transition: all ease .5s;
+    z-index: 1;
+    display: block;
+    color: black;
+
+
+}
+ul li:hover .submenu{
+    opacity: 1;
+    margin: 20px 0;
+}
+.submenu li{
+    margin: 0;
+    /* border: 1px solid red; */
+    color: black;
+}
+.submenu li a{
+    display: block;
+    width: 100%;
+    font-size: 15px;
+    text-align: center;
+    border-radius: 0;
+    color: black;
+}
+.submenu li:first-child a{
+    border-top-right-radius: 10px ;
+    border-top-left-radius:10px ;
+}
+.submenu li:last-child a{
+    border-bottom-left-radius: 10px ;
+    border-bottom-right-radius: 10px ;
+}
+
+/* Submenu Ends */
+
+/* Sliders STarts */
+
+#home{
+    height: 650px;
+        background-color: #333;
+}
+.slide-wrapper{
+    width: 70%;
+    height: 100%;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    margin: 0 auto;
+    position:relative;
+    top: 50px;
+}
+.slider{
+    margin-right: 10px;
+    height: 100%;
+    width: 15%;
+    position: relative;
+    border-radius: 60px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all ease-in-out 400ms;
+}
+.slider.active{
+   width: 50%;
+   border-radius: 50%;
+   animation: move-down 1.5s ease-in infinite alternate-reverse; 
+}
+@keyframes move-down {
+    from{
+        transform:  translateY(-35px);
+        }
+        to{
+            transform: translateY(0);
+        }
+    }
+
+.pic-1{
+    background-image: url('./3f41276567b769d42383278c6224c411.jpg');
+    background-position: center center;
+}
+.pic-2{
+    background-image: url('./59ded07912d619c5cfce3a835efdf29f.jpg');
+    background-position: center center;
+}
+.pic-3{
+    background-image: url('./7a1cf115affb5816f6cc3ac5eb564cef.jpg');
+    background-position: center center;
+}
+.pic-4{
+    background-image: url('./b124db80d58918c47bbcf735e839a4de.jpg');
+    background-position: center;
+}
+.pic-5{
+    background-image: url('./ecbe9d1d4d1168b1b5d016238e985718.jpg');
+    background-position: center ;
+}
+.txt{
+    z-index: 0;
+    position: absolute;
+    top: 50%;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 50px;
+    opacity: .9;
+    
+}
+.fa-arrow-down{
+    font-size: 50px;
+    color: black;
+    position: relative;
+    top: 25px;
+    animation: move-arrow-down 1.5s ease-in infinite alternate-reverse;
+
+}
+
+.arrow{
+    /* border: 1px solid black; */
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@keyframes move-arrow-down{
+    from {
+        transform: translateY(0);
+    }
+    to{
+        transform: translateY(25px);
+    }
+}
+/* page 2 starts*/
+.wrappr2 {
+    min-height: 100vh;
+    position: relative;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    margin-inline: auto;
+    max-zoom: 80% important!;
+}
+.sliwrappr{
+    width: 100%;
+    height: 650px;
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    max-zoom: 80% important!;
+    position: sticky;
+}
+.h{
+    /* border: 1px solid red; */
+
+    background-image: url(./honeymoon1.jpg);
+}
+.k{
+    /* border: 1px solid red; */
+    background-image: url(./Lana-Del-Rey-Born-To-Die-album-cover-web-optimised-820.webp);
+
+}
+.album{
+    /* border: 1px solid red; */
+    height: 80%;
+    width: 25%;
+    opacity:0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    transform: translateX(100%);
+    filter: blur(5px);
+    transition: all 1s;
+}
+
+.l{
+    background-image: url(./264x264.jpg);
+}
+.show{
+    opacity: 1;
+    transform: translateX(0);
+    filter: blur(0);
+
+}
